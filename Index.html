@@ -4,140 +4,234 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yuri Silva de Araujo - Currículo</title>
+
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             background-color: #f0f0f0;
             margin: 0;
             padding: 20px;
             display: flex;
             justify-content: center;
         }
+
         .resume {
             width: 900px;
+            max-width: 100%;
             background-color: white;
             border: 5px solid navy;
             padding: 30px;
             box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            box-sizing: border-box;
         }
+
         .header {
             text-align: center;
             border-bottom: 2px solid navy;
             padding-bottom: 20px;
             margin-bottom: 20px;
         }
+
         .name {
             font-size: 36px;
             color: navy;
             margin: 0;
         }
+
         .title {
             font-size: 24px;
             color: navy;
             margin: 10px 0;
         }
+
         .container {
             display: flex;
             gap: 40px;
+            flex-wrap: wrap;
         }
+
         .left-column {
             flex: 1;
+            min-width: 280px;
             background-color: #1a2a44;
             color: white;
             padding: 20px;
+            border-radius: 8px;
         }
+
         .right-column {
             flex: 2;
+            min-width: 300px;
             padding: 20px;
         }
+
         h2 {
             color: navy;
             border-bottom: 1px solid navy;
             padding-bottom: 5px;
+            margin-top: 30px;
         }
+
         .left-column h2 {
             color: white;
             border-bottom: 1px solid white;
+            margin-top: 25px;
         }
+
+        .left-column h2:first-of-type {
+            margin-top: 0;
+        }
+
         ul {
             list-style-type: disc;
             padding-left: 20px;
         }
+
         .contact-item {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            font-size: 16px;
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+            word-break: break-word;
         }
-        a {
+
+        .contact-item a {
             color: white;
             text-decoration: none;
+            border-bottom: 1px dashed white;
+            word-break: break-all;
         }
-        a:hover {
-            text-decoration: underline;
+
+        .contact-item a:hover {
+            border-bottom: 1px solid white;
+        }
+
+        strong {
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .resume {
+                padding: 20px;
+            }
         }
     </style>
 </head>
+
 <body>
     <div class="resume">
+
         <div class="header">
             <h1 class="name">YURI SILVA DE ARAUJO</h1>
             <p class="title">DESENVOLVIMENTO DE SISTEMAS</p>
         </div>
-        
+
         <div class="container">
+
+            <!-- COLUNA ESQUERDA -->
             <div class="left-column">
+
                 <h2>SOBRE MIM</h2>
-                <p>Sou estudante de Desenvolvimento de Sistemas, com 16 anos, atualmente cursando a ETEC de Itanhaém. Busco minha primeira oportunidade profissional para adquirir experiência prática, desenvolver minhas habilidades técnicas e aprender continuamente na área de tecnologia.</p>
-                
-                <p><strong>Programador Júnior / Front-end</strong><br>(Meio Período)</p>
-                
+                <p>
+                    Sou estudante de Desenvolvimento de Sistemas, com 16 anos, atualmente cursando a ETEC de Itanhaém.
+                    Busco minha primeira oportunidade profissional para adquirir experiência prática, desenvolver minhas
+                    habilidades técnicas e aprender continuamente na área de tecnologia.
+                </p>
+
+                <p>
+                    <strong>Programador Júnior / Front-end</strong><br>
+                    (Meio Período)
+                </p>
+
                 <h2>CONTATO</h2>
-                <div class="contact-item">📞 (13) 99808-0179</div>
-                <div class="contact-item">✉️ yuri049@gmail.com</div>
-                <div class="contact-item">🌐 https://github.com/yuri71717/Curriculo.git</div>
-                <div class="contact-item">📍 Itanhaém - SP</div>
-                
+                <div class="contact-item">📞 <span>(13) 99808-0179</span></div>
+                <div class="contact-item">✉️ <span>yuria049@gmail.com</span></div>
+
+                <div class="contact-item">
+                    <span>🌐</span>
+                    <a href="https://github.com/yuri71717/Curriculo" target="_blank">
+                        github.com/yuri71717/Curriculo
+                    </a>
+                </div>
+
+                <div class="contact-item">📍 <span>Itanhaém - SP</span></div>
+
                 <h2>HABILIDADES</h2>
                 <ul>
                     <li>HTML</li>
+                    <li>CSS</li>
                     <li>Bootstrap</li>
                     <li>JavaScript (básico)</li>
                     <li>jQuery (básico)</li>
                     <li>Excel (nível escolar)</li>
                 </ul>
-                
+
                 <h2>IDIOMAS</h2>
                 <ul>
                     <li>Português: Nativo</li>
-                    <li>Inglês: Intermediário<br>(Intermediate High / Advanced Low)</li>
+                    <li>Inglês: Intermediário (Intermediate High / Advanced Low)</li>
                 </ul>
+
             </div>
-            
+
+            <!-- COLUNA DIREITA -->
             <div class="right-column">
+
                 <h2>OBJETIVO PROFISSIONAL</h2>
-                <p>Conquistar uma oportunidade como estagiário, jovem aprendiz ou trainee na área de tecnologia, especialmente em desenvolvimento web, para ganhar experiência prática e evoluir profissionalmente.</p>
-                
+                <p>
+                    Conquistar uma oportunidade como estagiário, jovem aprendiz ou trainee na área de tecnologia,
+                    especialmente em desenvolvimento web, para ganhar experiência prática e evoluir profissionalmente.
+                </p>
+
                 <h2>CERTIFICAÇÕES E CURSOS</h2>
-                <p><strong>Reconhecimento por Excelente Desempenho Escolar:</strong><br>E.M. Prof. Maria Fª Conceição Luz – 1º trimestre de 2023 (Turma 8ªC)</p>
-                
-                <p><strong>Curso de Ciências</strong><br>E.M. Prof. Maria Fª Conceição Luz<br>14/06/2022 a 06/12/2022 – Carga horária: 48 horas</p>
-                
-                <p><strong>Curso de Inglês – IW English School</strong><br>Certificação de nível Intermediate High a Advanced Low</p>
-                
-                <p><strong>Perfection Module – IW English School</strong><br>Outubro de 2024 – Carga horária: 50 horas</p>
-                
+
+                <p>
+                    <strong>Reconhecimento por Excelente Desempenho Escolar</strong><br>
+                    E.M. Prof. Maria Fª Conceição Luz – 1º trimestre de 2023 (Turma 8ªC)
+                </p>
+
+                <p>
+                    <strong>Curso de Ciências</strong><br>
+                    E.M. Prof. Maria Fª Conceição Luz<br>
+                    14/06/2022 a 06/12/2022 – Carga horária: 48 horas
+                </p>
+
+                <p>
+                    <strong>Curso de Inglês – IW English School</strong><br>
+                    Certificação de nível Intermediate High a Advanced Low
+                </p>
+
+                <p>
+                    <strong>Perfection Module – IW English School</strong><br>
+                    Outubro de 2024 – Carga horária: 50 horas
+                </p>
+
                 <h2>DISCIPLINAS DO CURSO</h2>
                 <ul>
                     <li>Fundamentos da Informática</li>
                     <li>Programação Web (PW)</li>
                     <li>Técnicas de Programação e Algoritmos (TPA)</li>
                     <li>Banco de Dados</li>
-                    <li>Análise e Projetos de Sistema</li>
+                    <li>Análise e Projetos de Sistemas</li>
                     <li>Design Digital</li>
                 </ul>
-                
+
                 <h2>FORMAÇÃO ACADÊMICA</h2>
-                <p><strong>ETEC de Itanhaém</strong><br>2025–2027<br>Curso Técnico em Desenvolvimento de Sistemas</p>
+                <p>
+                    <strong>ETEC de Itanhaém</strong><br>
+                    Curso Técnico em Desenvolvimento de Sistemas<br>
+                    2025 – 2027 (em andamento)
+                </p>
+
             </div>
+
         </div>
     </div>
 </body>
 </html>
+
