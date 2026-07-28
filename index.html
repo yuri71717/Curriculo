@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Yuri Araujo | Desenvolvedor Front-End & C#</title>
+    <meta name="description" content="Portfólio de Yuri Araujo, Desenvolvedor Front-End de 17 anos, estudante de Desenvolvimento de Sistemas na ETEC de Itanhaém. Especialista em HTML, CSS, JavaScript e C# (.NET).">
+    <meta name="keywords" content="Yuri Araujo, Desenvolvedor Front-End, ETEC Itanhaém, Portfólio, Desenvolvedor C#, Desenvolvedor Web, Currículo Yuri">
+    <meta name="author" content="Yuri Araujo">
+    
+    <!-- Open Graph / Social Media Preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Yuri Araujo | Desenvolvedor Front-End & C#">
+    <meta property="og:description" content="Conheça o portfólio profissional de Yuri Araujo: projetos web, habilidades de programação e contato para oportunidades e parcerias.">
+    <meta property="og:url" content="https://yuri71717.github.io/Curriculo/">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    
+    <!-- Estilos customizados -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand navbar-brand-logo text-gradient-cyan" href="#home">Yuri.dev</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="border: none;">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobre">Sobre Mim</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#habilidades">Habilidades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projetos">Projetos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contato">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-shape-1"></div>
+        <div class="hero-shape-2"></div>
+        <div class="container hero-container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <div class="hero-tag mb-3 text-white"><i class="bi bi-code-slash me-2" style="color: var(--accent-cyan);"></i>Bem-vindo ao meu portfólio</div>
+                    <h1 class="hero-title">
+                        Olá, eu sou o <br>
+                        <span class="text-gradient-cyan">Yuri Araujo</span>
+                    </h1>
+                    <div class="hero-subtitle">
+                        <span id="typewriter"></span><span class="cursor-type">|</span>
+                    </div>
+                    <p class="lead text-secondary mb-4 col-md-10">
+                        Estudante de Desenvolvimento de Sistemas de 17 anos na ETEC de Itanhaém. Focado em criar experiências interativas de alto nível na web e soluções de software eficientes com C#.
+                    </p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#projetos" class="btn btn-neon d-flex align-items-center gap-2">
+                            Ver Projetos <i class="bi bi-arrow-down-circle"></i>
+                        </a>
+                        <a href="#contato" class="btn btn-outline-neon d-flex align-items-center gap-2">
+                            Me Contrate <i class="bi bi-chat-dots"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-5 d-none d-lg-block">
+                    <div class="glass-card text-center p-5 position-relative overflow-hidden" style="border-radius: 30px;">
+                        <div class="mb-4">
+                            <i class="bi bi-laptop display-1 text-gradient-purple"></i>
+                        </div>
+                        <h3 class="mb-2">Desenvolvimento Ativo</h3>
+                        <p class="text-secondary small mb-4">Criando códigos modernos todos os dias e aperfeiçoando designs.</p>
+                        <div class="d-flex justify-content-around text-center mt-3">
+                            <div>
+                                <h4 class="text-gradient-cyan mb-0">1+</h4>
+                                <small class="text-secondary">Ano de Estudos</small>
+                            </div>
+                            <div style="border-right: 1px solid rgba(255,255,255,0.08); height: 40px;"></div>
+                            <div>
+                                <h4 class="text-gradient-purple mb-0">10+</h4>
+                                <small class="text-secondary">Projetos no Git</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Mim Section -->
+    <section id="sobre" class="py-5" style="background-color: var(--bg-tertiary);">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Sobre Mim</h2>
+            </div>
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-6">
+                    <h3 class="mb-3 text-gradient-dual">Quem eu sou?</h3>
+                    <p class="lead-text text-secondary mb-4" style="line-height: 1.8;">
+                        Sou estudante de Desenvolvimento de Sistemas, atualmente cursando o ensino técnico na ETEC de Itanhaém. Busco minha primeira oportunidade profissional para adquirir experiência prática, desenvolver minhas habilidades técnicas e aprender continuamente na área de tecnologia.
+                    </p>
+                    <p class="text-secondary" style="line-height: 1.8;">
+                        Sempre fui fascinado por tecnologia e programação. Gosto de focar na criação de interfaces de usuário que sejam agradáveis, rápidas e fáceis de usar. Também possuo uma boa base em programação orientada a objetos usando C# e lógica de banco de dados.
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="glass-card">
+                        <h4 class="mb-4 text-gradient-cyan"><i class="bi bi-info-circle me-2"></i>Informações Rápidas</h4>
+                        <ul class="about-details">
+                            <li>
+                                <span class="title">Idade</span>
+                                <span class="value">17 anos</span>
+                            </li>
+                            <li>
+                                <span class="title">Cidade Natal</span>
+                                <span class="value">Itanhaém - SP</span>
+                            </li>
+                            <li>
+                                <span class="title">Instituição</span>
+                                <span class="value">ETEC de Itanhaém</span>
+                            </li>
+                            <li>
+                                <span class="title">Curso</span>
+                                <span class="value">Desenvolvimento de Sistemas</span>
+                            </li>
+                            <li>
+                                <span class="title">Status</span>
+                                <span class="value text-success"><span class="spinner-grow spinner-grow-sm me-1 text-success" role="status" style="width: 10px; height: 10px;"></span> Disponível para Oportunidades</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Habilidades Section -->
+    <section id="habilidades" class="py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Minhas Habilidades</h2>
+            </div>
+            <div class="row g-4">
+                <!-- Skill 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="skill-card">
+                        <div class="skill-icon-wrapper">
+                            <i class="bi bi-filetype-html"></i>
+                        </div>
+                        <h4 class="skill-name">HTML5 & CSS3</h4>
+                        <p class="text-secondary small">Estruturação semântica e estilização moderna flexível.</p>
+                        <div class="skill-progress-container">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="small text-secondary">Proficiência</span>
+                                <span class="small text-gradient-purple fw-bold">90%</span>
+                            </div>
+                            <div class="skill-progress-bar-bg">
+                                <div class="skill-progress-bar-fill" data-progress="90"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Skill 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="skill-card">
+                        <div class="skill-icon-wrapper">
+                            <i class="bi bi-bootstrap-fill"></i>
+                        </div>
+                        <h4 class="skill-name">Bootstrap 5</h4>
+                        <p class="text-secondary small">Framework CSS para agilidade e interfaces 100% responsivas.</p>
+                        <div class="skill-progress-container">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="small text-secondary">Proficiência</span>
+                                <span class="small text-gradient-purple fw-bold">85%</span>
+                            </div>
+                            <div class="skill-progress-bar-bg">
+                                <div class="skill-progress-bar-fill" data-progress="85"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Skill 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="skill-card">
+                        <div class="skill-icon-wrapper">
+                            <i class="bi bi-filetype-js"></i>
+                        </div>
+                        <h4 class="skill-name">JavaScript (ES6+)</h4>
+                        <p class="text-secondary small">Dinâmica no front-end, consumo de APIs e manipulação do DOM.</p>
+                        <div class="skill-progress-container">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="small text-secondary">Proficiência</span>
+                                <span class="small text-gradient-purple fw-bold">75%</span>
+                            </div>
+                            <div class="skill-progress-bar-bg">
+                                <div class="skill-progress-bar-fill" data-progress="75"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Skill 4 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="skill-card">
+                        <div class="skill-icon-wrapper">
+                            <i class="bi bi-code-square"></i>
+                        </div>
+                        <h4 class="skill-name">C# (.NET)</h4>
+                        <p class="text-secondary small">Lógica de programação backend e desenvolvimento orientado a objetos.</p>
+                        <div class="skill-progress-container">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="small text-secondary">Proficiência</span>
+                                <span class="small text-gradient-purple fw-bold">70%</span>
+                            </div>
+                            <div class="skill-progress-bar-bg">
+                                <div class="skill-progress-bar-fill" data-progress="70"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Skill 5 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="skill-card">
+                        <div class="skill-icon-wrapper">
+                            <i class="bi bi-database-fill"></i>
+                        </div>
+                        <h4 class="skill-name">Banco de Dados</h4>
+                        <p class="text-secondary small">Modelagem relacional, consultas SQL e persistência básica.</p>
+                        <div class="skill-progress-container">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="small text-secondary">Proficiência</span>
+                                <span class="small text-gradient-purple fw-bold">65%</span>
+                            </div>
+                            <div class="skill-progress-bar-bg">
+                                <div class="skill-progress-bar-fill" data-progress="65"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Skill 6 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="skill-card">
+                        <div class="skill-icon-wrapper">
+                            <i class="bi bi-translate"></i>
+                        </div>
+                        <h4 class="skill-name">Inglês</h4>
+                        <p class="text-secondary small">Capacidade de leitura de documentações e conversação básica (High Advanced Low).</p>
+                        <div class="skill-progress-container">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="small text-secondary">Proficiência</span>
+                                <span class="small text-gradient-purple fw-bold">80%</span>
+                            </div>
+                            <div class="skill-progress-bar-bg">
+                                <div class="skill-progress-bar-fill" data-progress="80"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projetos Section -->
+    <section id="projetos" class="py-5" style="background-color: var(--bg-tertiary);">
+        <div class="container py-5">
+            <div class="text-center mb-4">
+                <h2 class="section-title">Meus Projetos Públicos</h2>
+                <p class="text-secondary col-md-8 mx-auto mt-2">
+                    Estes projetos são carregados dinamicamente diretamente do meu GitHub. Eles representam minhas criações e códigos desenvolvidos em cursos e atividades práticas.
+                </p>
+            </div>
+            
+            <!-- Grid de repositórios do GitHub -->
+            <div class="row" id="repos-container">
+                <!-- Inserido dinamicamente via github.js -->
+            </div>
+
+            <div class="text-center mt-5">
+                <a href="https://github.com/yuri71717" target="_blank" class="btn btn-outline-neon d-inline-flex align-items-center gap-2">
+                    Ver Perfil Completo no GitHub <i class="bi bi-github"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato Section -->
+    <section id="contato" class="py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Contato e Contratação</h2>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-5">
+                    <h3 class="mb-4 text-gradient-dual">Vamos conversar?</h3>
+                    <p class="text-secondary mb-5">
+                        Se você precisa de um site simples, busca um desenvolvedor júnior/estagiário dedicado ou gostaria de trocar uma ideia sobre tecnologia, fique à vontade para me contatar por qualquer um dos canais oficiais.
+                    </p>
+                    
+                    <!-- Links rápidos como Cards -->
+                    <div class="d-flex flex-column gap-3">
+                        <!-- WhatsApp -->
+                        <a href="https://wa.me/5513998080179?text=Olá%20Yuri,%20vi%20seu%20portfólio%20e%20gostaria%20de%20conversar!" target="_blank" class="contact-btn-card">
+                            <div class="contact-icon-box text-success">
+                                <i class="bi bi-whatsapp"></i>
+                            </div>
+                            <div>
+                                <p class="contact-info-title">WhatsApp</p>
+                                <p class="contact-info-val">(13) 99808-0179</p>
+                            </div>
+                        </a>
+                        
+                        <!-- E-mail -->
+                        <a href="mailto:yuri71717@gmail.com?subject=Contato%20Portfólio%20Yuri" class="contact-btn-card email">
+                            <div class="contact-icon-box text-danger">
+                                <i class="bi bi-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="contact-info-title">E-mail</p>
+                                <p class="contact-info-val">yuri71717@gmail.com</p>
+                            </div>
+                        </a>
+                        
+                        <!-- GitHub -->
+                        <a href="https://github.com/yuri71717" target="_blank" class="contact-btn-card">
+                            <div class="contact-icon-box text-white">
+                                <i class="bi bi-github"></i>
+                            </div>
+                            <div>
+                                <p class="contact-info-title">GitHub</p>
+                                <p class="contact-info-val">github.com/yuri71717</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-7">
+                    <div class="glass-card">
+                        <h4 class="mb-4 text-gradient-purple"><i class="bi bi-chat-left-text me-2"></i>Envie uma Mensagem</h4>
+                        <form id="contactForm">
+                            <!-- Chave de acesso do Web3Forms. Cole sua chave aqui no valor do value! -->
+                            <input type="hidden" name="access_key" id="web3forms_key" value="YOUR_ACCESS_KEY_HERE">
+                            <input type="hidden" name="subject" id="email_subject_title" value="Contato do Portfólio">
+                            
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="name" class="form-label text-secondary small">Seu Nome</label>
+                                    <input type="text" name="name" class="form-control form-control-custom" id="name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label text-secondary small">Seu E-mail</label>
+                                    <input type="email" name="email" class="form-control form-control-custom" id="email" required>
+                                </div>
+                                <div class="col-12">
+                                    <label for="subject_input" class="form-label text-secondary small">Assunto</label>
+                                    <input type="text" class="form-control form-control-custom" id="subject" required>
+                                </div>
+                                <div class="col-12">
+                                    <label for="message" class="form-label text-secondary small">Mensagem</label>
+                                    <textarea name="message" class="form-control form-control-custom" id="message" rows="4" required></textarea>
+                                </div>
+                                <div class="col-12 mt-4">
+                                    <button type="submit" class="btn btn-neon w-100 py-3">Enviar Mensagem</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="mb-2">© <span id="current-year"></span> Yuri Araujo. Desenvolvido com muito <i class="bi bi-heart-fill text-danger mx-1"></i> e código.</p>
+            <small class="text-secondary">Estudante de Desenvolvimento de Sistemas na ETEC Itanhaém.</small>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle JS (com Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Scripts customizados -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/github.js"></script>
+</body>
+</html>
