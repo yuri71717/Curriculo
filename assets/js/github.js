@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const reposContainer = document.getElementById('repos-container');
     const username = 'yuri71717';
     
-    // Mapeamento de cores para linguagens do GitHub
+    // Language Colors mapping
     const languageColors = {
         'C#': '#178600',
         'JavaScript': '#f1e05a',
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'C++': '#f34b7d'
     };
 
-    // Repositórios fallback caso a API falhe totalmente e não haja cache local
+    // Static Fallbacks
     const fallbackRepos = [
         {
             name: "Atividades-TPA-2025",
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     ];
 
-    // Renderiza skeletons/shimmers de carregamento
+    // Loading Skeletons
     function renderShimmers(count = 3) {
         if (!reposContainer) return;
         reposContainer.innerHTML = '';
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Renderiza a lista de repositórios no DOM
+    // Render Cards
     function renderRepos(repos) {
         if (!reposContainer) return;
         reposContainer.innerHTML = '';
@@ -111,25 +111,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Gerencia o carregamento e cache dos projetos
+    // Fetch & Cache Logic
     async function loadGitHubRepos() {
         renderShimmers(3);
 
         const cacheKey = 'github_repos_data';
         const cacheTimeKey = 'github_repos_timestamp';
-        const cacheDuration = 3600000; // 1 hora em milissegundos
+        const cacheDuration = 3600000;
 
         const cachedData = localStorage.getItem(cacheKey);
         const cachedTime = localStorage.getItem(cacheTimeKey);
         const now = Date.now();
 
-        // 1. Usa o cache do localStorage se for recente
         if (cachedData && cachedTime && (now - cachedTime < cacheDuration)) {
             renderRepos(JSON.parse(cachedData));
             return;
         }
 
-        // 2. Busca dados novos da API do GitHub
         try {
             const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`);
             
@@ -139,7 +137,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const rawRepos = await response.json();
             
-            // Filtra para remover forks
             const ownRepos = rawRepos
                 .filter(repo => !repo.fork)
                 .map(repo => ({
@@ -151,21 +148,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     forks_count: repo.forks_count
                 }));
 
-            // Salva no cache do localStorage
             localStorage.setItem(cacheKey, JSON.stringify(ownRepos));
             localStorage.setItem(cacheTimeKey, now.toString());
 
             renderRepos(ownRepos);
 
         } catch (error) {
-            console.warn('Erro ao acessar API do GitHub, usando dados antigos ou fallbacks:', error);
+            console.warn('Erro ao carregar dados do GitHub:', error);
             
-            // 3. Fallbacks em caso de falha de conexão/rate limit
             if (cachedData) {
-                // Se falhar mas tiver cache antigo, usa o cache antigo
                 renderRepos(JSON.parse(cachedData));
             } else {
-                // Se não tiver cache nenhum, usa os repositórios estáticos fallback
                 renderRepos(fallbackRepos);
             }
         }

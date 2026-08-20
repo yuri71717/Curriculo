@@ -20,6 +20,8 @@
 /* Reset & Scrollbar */
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 body {
@@ -28,6 +30,7 @@ body {
     font-family: 'Plus Jakarta Sans', sans-serif;
     margin: 0;
     overflow-x: hidden;
+    width: 100%;
     /* Efeito de Spotlight / Mesh Background */
     background-image: 
         radial-gradient(circle at 10% 20%, rgba(163, 113, 247, 0.08) 0%, transparent 40%),
@@ -553,5 +556,37 @@ footer {
     }
     .hero-subtitle {
         font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    .section-title {
+        font-size: 1.8rem;
+    }
+    .about-details li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    .about-details li span.value {
+        text-align: left;
+    }
+    .glass-card {
+        padding: 20px;
+    }
+    .contact-btn-card {
+        padding: 15px;
+    }
+    .skill-card {
+        padding: 20px;
+    }
+    .project-card {
+        padding: 20px;
     }
 }

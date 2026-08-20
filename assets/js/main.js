@@ -1,11 +1,29 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Render Current Year in Footer
+    // Footer Year
     const yearSpan = document.getElementById('current-year');
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
     }
 
-    // 2. Navbar Scroll Effect
+    // Visitor Counter
+    const visitsSpan = document.getElementById('visits');
+    if (visitsSpan) {
+        fetch('https://api.counterapi.dev/v1/yuri71717/portfolio/up')
+            .then(res => res.json())
+            .then(data => {
+                if (data && data.value) {
+                    visitsSpan.textContent = data.value;
+                } else {
+                    visitsSpan.textContent = '1';
+                }
+            })
+            .catch(err => {
+                console.warn('Contador indisponível:', err);
+                visitsSpan.textContent = '---';
+            });
+    }
+
+    // Navbar Scroll Effect
     const navbar = document.querySelector('.navbar-custom');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
@@ -15,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 3. Typewriter Effect
+    // Typewriter Effect
     const words = [
         "Desenvolvedor Front-End",
         "Estudante de Sistemas",
@@ -46,20 +64,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!isDeleting && charIndex === currentWord.length) {
             isDeleting = true;
-            speed = delayBetweenWords; // Pausa no final da palavra
+            speed = delayBetweenWords;
         } else if (isDeleting && charIndex === 0) {
             isDeleting = false;
             wordIndex = (wordIndex + 1) % words.length;
-            speed = 500; // Pequena pausa antes de começar a digitar a próxima
+            speed = 500;
         }
 
         setTimeout(type, speed);
     }
     
-    // Inicia o typewriter
     setTimeout(type, 500);
 
-    // 4. Animação de Skill Bars com Intersection Observer
+    // Skills Animation Observer
     const skillsSection = document.getElementById('habilidades');
     const progressFills = document.querySelectorAll('.skill-progress-bar-fill');
 
@@ -76,7 +93,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         const targetWidth = fill.getAttribute('data-progress');
                         fill.style.width = targetWidth + '%';
                     });
-                    // Para de observar após animar
                     observer.unobserve(entry.target);
                 }
             });
@@ -85,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
         skillObserver.observe(skillsSection);
     }
 
-    // 5. Contact Form Submission (Web3Forms / Simulation)
+    // Contact Form Handler
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', async (e) => {
@@ -105,14 +121,13 @@ document.addEventListener('DOMContentLoaded', () => {
             btnSubmit.disabled = true;
             btnSubmit.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Enviando...';
 
-            // Verifica se a chave padrão ainda não foi alterada (modo simulação local)
             if (accessKey === 'YOUR_ACCESS_KEY_HERE' || accessKey.trim() === '') {
                 setTimeout(() => {
                     btnSubmit.innerHTML = 'Mensagem Enviada!';
                     btnSubmit.classList.remove('btn-neon');
                     btnSubmit.classList.add('btn-success');
                     
-                    showNotification('Simulação: Mensagem recebida! (Troque YOUR_ACCESS_KEY_HERE no index.html por sua chave real do Web3Forms para enviar e-mails de verdade).');
+                    showNotification('Simulação: Mensagem recebida! Insira sua chave do Web3Forms no HTML para enviar de verdade.');
                     contactForm.reset();
                     
                     setTimeout(() => {
@@ -125,10 +140,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            // Envio Real via API Web3Forms (ideal para GitHub Pages estático)
             try {
-                // Atualiza o assunto do formulário dinamicamente para o e-mail
-                document.getElementById('email_subject_title').value = `Contato Portfólio Yuri: ${subject}`;
+                document.getElementById('email_subject_title').value = `Contato Portfólio: ${subject}`;
                 
                 const response = await fetch('https://api.web3forms.com/submit', {
                     method: 'POST',
@@ -140,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         access_key: accessKey,
                         name: name,
                         email: email,
-                        subject: `Contato Portfólio Yuri: ${subject}`,
+                        subject: `Contato Portfólio: ${subject}`,
                         message: message
                     })
                 });
@@ -173,7 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Função auxiliar para mostrar notificações bonitas na tela
+    // Toast Notification
     function showNotification(message) {
         const notification = document.createElement('div');
         notification.style.position = 'fixed';
@@ -196,13 +209,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.body.appendChild(notification);
 
-        // Animação de entrada
         setTimeout(() => {
             notification.style.opacity = '1';
             notification.style.transform = 'translateY(0)';
         }, 10);
 
-        // Remove após 5 segundos
         setTimeout(() => {
             notification.style.opacity = '0';
             notification.style.transform = 'translateY(20px)';
